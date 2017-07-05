@@ -1,0 +1,2 @@
+/usr/bin/ar cr libxx.a  CMakeFiles/xx.dir/src/1.cpp.o
+/usr/bin/ranlib libxx.a

@@ -1,0 +1,6 @@
+[ 50%] Building CXX object CMakeFiles/xx.dir/src/1.cpp.o
+Linking CXX static library libxx.a
+[ 50%] Built target xx
+[100%] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cpp.o
+Linking CXX executable Tutorial
+[100%] Built target Tutorial
