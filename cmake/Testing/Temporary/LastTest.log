@@ -1,0 +1,37 @@
+Start testing: Jul 03 19:50 CST
+----------------------------------------------------------
+1/2 Testing: TutorialRuns
+1/2 Test: TutorialRuns
+Command: "/home/xujiang/test/cmake/Tutorial" "25"
+Directory: /home/xujiang/test/cmake
+"TutorialRuns" start time: Jul 03 19:50 CST
+Output:
+----------------------------------------------------------
+hello world
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TutorialRuns" end time: Jul 03 19:50 CST
+"TutorialRuns" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: TutorialComp25
+2/2 Test: TutorialComp25
+Command: "/home/xujiang/test/cmake/Tutorial" "25"
+Directory: /home/xujiang/test/cmake
+"TutorialComp25" start time: Jul 03 19:50 CST
+Output:
+----------------------------------------------------------
+hello world
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[hello world
+]
+"TutorialComp25" end time: Jul 03 19:50 CST
+"TutorialComp25" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 03 19:50 CST

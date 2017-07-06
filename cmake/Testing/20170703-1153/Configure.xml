@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20170703-1153-Experimental"
+	Name="qingquan.virtual-box.centos"
+	Generator="ctest-2.8.12.2"
+	CompilerName="/usr/bin/c++"
+	OSName="Linux"
+	Hostname="qingquan.virtual-box.centos"
+	OSRelease="3.10.0-514.16.1.el7.x86_64"
+	OSVersion="#1 SMP Wed Apr 12 15:04:24 UTC 2017"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="61"
+	ProcessorCacheSize="3072"
+	NumberOfLogicalCPU="2"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="3967"
+	TotalPhysicalMemory="3791"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2700"
+>
+<Configure>
+	<StartDateTime>Jul 03 19:53 CST</StartDateTime>
+	<StartConfigureTime>1499082828</StartConfigureTime>
+<ConfigureCommand>"/usr/bin/cmake" "/home/xujiang/test/cmake"</ConfigureCommand>
+<Log>-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/xujiang/test/cmake
+</Log>
+	<ConfigureStatus>0</ConfigureStatus>
+	<EndDateTime>Jul 03 19:53 CST</EndDateTime>
+	<EndConfigureTime>1499082828</EndConfigureTime>
+<ElapsedMinutes>0</ElapsedMinutes></Configure>
+</Site>
