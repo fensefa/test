@@ -1,3 +1,4 @@
+#include <vector>
 template<typename DataType>
 class RbTreeNode {
 public:
@@ -61,10 +62,10 @@ public:
         Iterator() {
             _cur_node = nullptr;
         }
-        DataType& operator*() {
+        inline DataType& operator*() {
             return _cur_node->data;
         }
-        DataType* operator->() {
+        inline DataType* operator->() {
             return &_cur_node->data;
         }
         Iterator operator++() {
@@ -87,15 +88,15 @@ public:
             }
             return *this;
         }
-        Iterator operator++(int) {
+        inline Iterator operator++(int) {
             Iterator res = *this;
             ++*this;
             return res;
         }
-        bool operator==(const Iterator& other) {
+        inline bool operator==(const Iterator& other) {
             return (_cur_node == other._cur_node);
         }
-        bool operator!=(const Iterator& other) {
+        inline bool operator!=(const Iterator& other) {
             return !(*this == other);
         }
         friend class RbTree;
@@ -149,7 +150,7 @@ public:
     void erase(Iterator& it) {
         ;
     }
-    void clear() {
+    inline void clear() {
         _destroy_tree(_root);
         _root= nullptr;
     }
@@ -179,7 +180,7 @@ public:
         res._cur_node = ptr;
         return res;
     }
-    Iterator end() {
+    inline Iterator end() {
         Iterator res;
         return res;
     }

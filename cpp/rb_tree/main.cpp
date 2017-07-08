@@ -3,6 +3,7 @@
 #include <map>
 #include "rb_tree.hpp"
 #include "map.hpp"
+#include "../common/util.h"
 using namespace std;
 
 void test_rb_tree() {
@@ -27,8 +28,8 @@ void test_rb_tree() {
 }
 void test_map() {
     abc::map<int, int> int_map;
-    int_map.insert(2, 3);
-    int_map.insert(3, 5);
+    int_map.emplace(2, 3);
+    int_map.emplace(3, 5);
     int p1[] = {
         1, 2, 3, 4
     };
@@ -42,8 +43,8 @@ void test_map() {
         }
     }
     abc::map<string, string> str_map;
-    str_map.insert("abc", "hello");
-    str_map.insert("w2", "world");
+    str_map.emplace("abc", "hello");
+    str_map.emplace("w2", "world");
     string p2[] = {
         "abc", "hello", "w2", "world"
     };
@@ -59,42 +60,56 @@ void test_map() {
 }
 
 void test_maps() {
-    abc::map<int, int> map1;
-    std::map<int, int> map2;
+    abc::map<int, int>* p_map1 = new abc::map<int, int>;
+    std::map<int, int>* p_map2 = new std::map<int, int>;
     int n = 10;
     for (int i = 0; i < n; ++i) {
-        map1.insert(i, i + 1);
+        p_map1->emplace(i, i + 1);
     }
-    map1.print();
-    for (auto it = map1.begin(); it != map1.end(); ++it) {
+    // p_map1->print();
+    for (auto it = p_map1->begin(); it != p_map1->end(); ++it) {
         cout << "key: " << it->first << ", value: " << it->second << endl;
     }
-    // return;
-    n = 100000000;
-    cout << "time: " << time(nullptr) << endl;
+    n = 20000000;
+    auto t1 = util::get_current_time();
+    cout << "t1 " << t1 << endl;
     for (int i = 0; i < n; ++i) {
-        map1.insert(i, i + 1);
+        p_map1->emplace(i, i + 1);
     }
-    cout << "time: " << time(nullptr) << endl;
+    auto t2 = util::get_current_time();
+    cout << "t2 " << t2 << endl;
+    cout << "p_map1 emplace time: " << t2 - t1 << endl;
     for (int i = 0; i < n; ++i) {
-        map2.emplace(i, i + 1);
+        p_map2->emplace(i, i + 1);
     }
 
-    cout << "time: " << time(nullptr) << endl;
     int sum1 = 0;
-    for (auto it = map1.begin(); it != map1.end(); ++it) {
+    auto t3 = util::get_current_time();
+    cout << "t3 " << t3 << endl;
+    cout << "p_map2 emplace time: " << t3 - t2 << endl;
+    for (auto it = p_map1->begin(); it != p_map1->end(); ++it) {
         sum1 += it->second;
         sum1 %= 1048923;
     }
     cout << "sum1: " << sum1 << endl;
-    cout << "time: " << time(nullptr) << endl;
+    auto t4 = util::get_current_time();
+    cout << "t4 " << t4 << endl;
+    cout << "p_map1 iterator time: " << t4 - t3 << endl;
     int sum2 = 0;
-    for (auto it = map2.begin(); it != map2.end(); ++it) {
+    for (auto it = p_map2->begin(); it != p_map2->end(); ++it) {
         sum2 += it->second;
         sum2 %= 1048923;
     }
     cout << "sum2: " << sum2 << endl;
-    cout << "time: " << time(nullptr) << endl;
+    auto t5 = util::get_current_time();
+    cout << "t5 " << t5 << endl;
+    cout << "p_map2 iterator time: " << t5 - t4 << endl;
+    delete p_map1;
+    auto t6 = util::get_current_time();
+    cout << "t6 " << t6 << endl;
+    delete p_map2;
+    auto t7 = util::get_current_time();
+    cout << "t7 " << t7 << endl;
 }
 
 int main() {
