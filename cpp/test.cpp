@@ -1,1 +1,1 @@
-test_functor.cpp
+test_stream.cpp

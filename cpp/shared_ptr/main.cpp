@@ -1,5 +1,5 @@
 #include <iostream>
-#include "shared_ptr.h"
+#include "shared_ptr.hpp"
 using namespace std;
 
 void test1() {

@@ -66,7 +66,7 @@ void test_maps() {
     for (int i = 0; i < n; ++i) {
         p_map1->emplace(i, i + 1);
     }
-    // p_map1->print();
+    p_map1->print();
     for (auto it = p_map1->begin(); it != p_map1->end(); ++it) {
         cout << "key: " << it->first << ", value: " << it->second << endl;
     }
@@ -104,12 +104,30 @@ void test_maps() {
     auto t5 = util::get_current_time();
     cout << "t5 " << t5 << endl;
     cout << "p_map2 iterator time: " << t5 - t4 << endl;
-    delete p_map1;
+    for (int i = 0; i < n; ++i) {
+        auto it = p_map1->find(i);
+        if (it == p_map1->end() || it->second != i + 1) {
+            cout << "wrong in p_map1: " << i << endl;
+        }
+    }
     auto t6 = util::get_current_time();
     cout << "t6 " << t6 << endl;
-    delete p_map2;
+    cout << "p_map1 find time: " << t6 - t5 << endl;
+    for (int i = 0; i < n; ++i) {
+        auto it = p_map2->find(i);
+        if (it == p_map2->end() || it->second != i + 1) {
+            cout << "wrong in p_map2: " << i << endl;
+        }
+    }
     auto t7 = util::get_current_time();
     cout << "t7 " << t7 << endl;
+    cout << "p_map2 find time: " << t7 - t6 << endl;
+    delete p_map1;
+    auto t8 = util::get_current_time();
+    cout << "t8 " << t8 << endl;
+    delete p_map2;
+    auto t9 = util::get_current_time();
+    cout << "t9 " << t9 << endl;
 }
 
 int main() {
