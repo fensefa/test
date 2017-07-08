@@ -1,3 +1,5 @@
+namespace abc {
+
 template<typename KeyType, typename ValueType>
 class map {
 private:
@@ -23,9 +25,14 @@ public:
         std::pair<KeyType, ValueType> tmp_pair = std::make_pair(key, value);
         _rb_tree.insert(tmp_pair);
     }
+    void print() {
+        _rb_tree.print();
+    }
 private:
     static bool compare(const std::pair<KeyType, ValueType>& p1, const std::pair<KeyType, ValueType>& p2) {
         return p1.first < p2.first;
     }
     RbTree<std::pair<KeyType, ValueType>, Compare> _rb_tree;
 };
+
+}
