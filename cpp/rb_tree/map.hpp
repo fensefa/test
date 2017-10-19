@@ -29,11 +29,6 @@ public:
         _rb_tree.print();
     }
 private:
-    /*
-    inline static bool compare(const std::pair<KeyType, ValueType>& p1, const std::pair<KeyType, ValueType>& p2) {
-        return p1.first < p2.first;
-    }
-    */
     RbTree<std::pair<KeyType, ValueType>, Compare> _rb_tree;
 };
 

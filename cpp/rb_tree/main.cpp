@@ -3,6 +3,7 @@
 #include <map>
 #include "rb_tree.hpp"
 #include "map.hpp"
+#include "set.hpp"
 #include "../common/util.h"
 using namespace std;
 

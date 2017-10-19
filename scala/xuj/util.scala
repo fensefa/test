@@ -1,0 +1,4 @@
+package xuj
+
+class Util {
+}

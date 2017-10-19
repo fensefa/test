@@ -1,4 +1,3 @@
-#include <vector>
 template<typename DataType>
 class RbTreeNode {
 public:

@@ -5,7 +5,7 @@ OBJS = $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 TARGET = test
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS) -ltcmalloc
 
 run: $(TARGET)
 	./$(TARGET)
